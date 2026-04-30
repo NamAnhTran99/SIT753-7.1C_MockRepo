@@ -25,7 +25,7 @@ pipeline {
                     emailext(
                         to: "${env.EMAIL_TO}",
                         subject: "Test Stage ${currentBuild.currentResult}",
-                        body: "Test stage finished with status: ${currentBuild.currentResult}",
+                        body: "Test finished with status: ${currentBuild.currentResult}",
                         attachLog: true
                     )
                 }
@@ -47,7 +47,7 @@ pipeline {
                     emailext(
                         to: "${env.EMAIL_TO}",
                         subject: "Security Scan ${currentBuild.currentResult}",
-                        body: "Security scan completed with status: ${currentBuild.currentResult}",
+                        body: "Security scan finished with status: ${currentBuild.currentResult}",
                         attachLog: true
                     )
                 }
@@ -73,7 +73,6 @@ pipeline {
         }
     }
 
-    // optional (you can keep or remove)
     post {
         always {
             emailext(
