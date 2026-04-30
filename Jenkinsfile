@@ -77,7 +77,7 @@ pipeline {
     post {
         always {
             emailext(
-                to: 'your_email@gmail.com',
+                to: "${env.EMAIL_TO}",
                 subject: "Build ${currentBuild.currentResult}",
                 body: "Pipeline finished with status: ${currentBuild.currentResult}",
                 attachLog: true
